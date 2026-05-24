@@ -3,7 +3,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 const allPosts = Object.values(
   import.meta.glob("../posts/*.md", { eager: true }),
 );
-// const tags = ['astro', 'ブログ', '公開学習', '成功', 'つまずき', 'コミュニティ']
 const tags = [
   ...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat()),
 ];
@@ -29,12 +28,6 @@ const pageTitle = "タグインデックス";
   }
 </style>
 <BaseLayout pageTitle={pageTitle}>
-  <!-- <ul> -->
-  <!-- {tags.map((tag) => <li>{tag}</li>)} -->
-  <!-- {tags.map((tag) => (
-      <p><a href={`/tags/${tag}`}>{tag}</a></p>
-    ))} -->
-  <!-- </ul> -->
   <div class="tags">
     {
       tags.map((tag) => (
